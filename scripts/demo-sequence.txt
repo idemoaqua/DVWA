@@ -26,9 +26,23 @@ Attacker : Elevate user to root
 Attacker : Start a new container with host file system mounted
 Attacker : Control the host file system
 
+PO : How did this happen, my developer says there is no route from internet to my server ?
+Security: A return path to any server initiated request does not need ingress from internet ?
+
+PO : Why did the WAF not stop attacker ?
+Security : WAF stands infront of attacker initiated connection not server initiated connection ?
+
+
 Take away:
 Attacker will not use the funtionality based on your usecase. Attacker will abuse the functionality to achive his goals.
 Restricting your container is good idea, but super user permissions can open up other unrestricted actions
+
+
+How can security help me:
+1. Code Scan - on the application would highlight the command injection and stop attacker from starting a connection from server.
+2. Container Scan - would clearly warn against vulnerabilities and use of root user in container
+3. IaC Scan - would find the misconfigurations in Dockerfile and compose
+
 
 
 
