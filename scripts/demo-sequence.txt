@@ -1,0 +1,37 @@
+PO: I want to store a confidential document. I want to make sure this location is not reachable from internet.
+Developer: Sure, I can create a virtual machine in a private NW and give you a folder
+Developer: I have this VM for you, there is no SSH, there is no route to reach this machine from internet.
+PO: Thank you - store important data.
+
+
+Few days gone:
+PO: I need a small web app that would allow me to ping a IP and check if it's reachable or not from my server
+Developer: No problem, I will find some thing on internet and host it for you.
+
+PO : Wait wait - will it expose my important data
+Developer : No No - I will run the app in a container so it can not access any data on the host.
+            Also the webserver is not a root user so don't worry
+
+Developer : Lookup on internet and found cnappeval/dvwa:5
+            This is an internal utility so not to worry
+
+PO : It has got so much more functionality should we contact digital security
+Developer: Don't worry, we are not using anything other than ping. We don't need to owrry about it's security
+
+PO : Okay thank you.
+
+Attacker : Open a listener
+Attacker : Inject a command to initiate request from webApp to attack machine
+Attacker : Elevate user to root
+Attacker : Start a new container with host file system mounted
+Attacker : Control the host file system
+
+Take away:
+Attacker will not use the funtionality based on your usecase. Attacker will abuse the functionality to achive his goals.
+Restricting your container is good idea, but super user permissions can open up other unrestricted actions
+
+
+
+
+
+
