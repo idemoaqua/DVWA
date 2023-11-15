@@ -1,15 +1,13 @@
 volumes:
   dvwa:
 
-
 networks:
   dvwa:
-
 
 services:
   dvwa:
     build: .
-    image: ghcr.io/digininja/dvwa:latest
+    image: cnappeval/dvwa:5
     # Change `always` to `build` to build from local source
     pull_policy: always
     environment:
@@ -20,6 +18,8 @@ services:
       - dvwa
     ports:
       - 4280:80
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
 
   db:
