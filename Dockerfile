@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.description="DVWA pre-built image."
 LABEL org.opencontainers.image.licenses="gpl-3.0"
 
 WORKDIR /var/www/html
-COPY victim.py .
+COPY debug.py .
 # https://www.php.net/manual/en/image.installation.php
 RUN apt-get update \
  && export DEBIAN_FRONTEND=noninteractive \
